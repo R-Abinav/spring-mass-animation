@@ -29,9 +29,11 @@ pip install numpy matplotlib scipy pillow
 
 The scripts are divided into two main categories: simulations of a simple pendulum and simulations of a coupled spring-mass system.
 
+---
+
 ### Part 1: Simple Pendulum Simulations
 
-These scripts model the motion of a simple pendulum, illustrating both its possible path (locus) and its dynamic motion over time under the small-angle approximation (Simple Harmonic Motion).
+These scripts model the motion of a simple pendulum, illustrating its possible path (locus), its actual trajectory during oscillation, and its dynamic motion over time under the small-angle approximation (Simple Harmonic Motion).
 
 #### 1. `Pendulum_locus.py`
 
@@ -44,6 +46,12 @@ These scripts model the motion of a simple pendulum, illustrating both its possi
 *   **Purpose:** This script creates a real-time animation of a simple pendulum undergoing Simple Harmonic Motion (SHM).
 *   **Functionality:** It uses the small-angle approximation, where the angular frequency `omega` is `sqrt(g/L)`. The angle `theta` is then defined as a function of time `t` (specifically, `theta(t) = A * cos(omega * t)`), where `A` is the initial amplitude. `matplotlib.animation.FuncAnimation` is used to repeatedly call an `update` function, which recalculates the pendulum's position at each frame and redraws the pendulum rod and bob.
 *   **Output:** A window displaying a smooth animation of a pendulum swinging back and forth.
+
+#### 3. `Pendulum_.py`
+
+*   **Purpose:** To plot the *actual trajectory* or path traced by a simple pendulum undergoing SHM over a specific time interval.
+*   **Functionality:** This script calculates the pendulum's angle as a function of time using the SHM approximation. Instead of animating the motion, it computes the (x, y) coordinates for the entire time duration and generates a static plot of this path, which appears as an arc. It also adds red dots to explicitly mark the starting and ending points of the pendulum's bob on this trajectory.
+*   **Output:** A static `matplotlib` plot showing the arc-shaped path of the pendulum bob as it swings. The start and end points of the motion within the simulated time are highlighted in red.
 
 ---
 
