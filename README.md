@@ -53,6 +53,14 @@ These scripts model the motion of a simple pendulum, illustrating its possible p
 *   **Functionality:** This script calculates the pendulum's angle as a function of time using the SHM approximation. Instead of animating the motion, it computes the (x, y) coordinates for the entire time duration and generates a static plot of this path, which appears as an arc. It also adds red dots to explicitly mark the starting and ending points of the pendulum's bob on this trajectory.
 *   **Output:** A static `matplotlib` plot showing the arc-shaped path of the pendulum bob as it swings. The start and end points of the motion within the simulated time are highlighted in red.
 
+#### 4. `SHM_Pendulum.py`
+
+*   **Purpose:** This script provides another animation of a pendulum, but it is implemented using the `pygame` library, which is geared towards creating games and interactive applications.
+*   **Functionality:** It initializes a `pygame` window and enters a main loop that runs continuously. In each frame, it clears the screen, calculates the bob's position based on an angle, and redraws the pendulum's arm and bob.
+    *   **Note on Physics:** It is important to note that despite the filename, the physics model in this script is **not** Simple Harmonic Motion. The angle is updated by adding a constant `angle_velocity` in each frame. This results in the pendulum undergoing uniform circular motion (i.e., spinning in a full circle at a constant speed) rather than oscillating back and forth.
+*   **Output:** A `pygame` window displaying a pendulum continuously rotating around its pivot point.
+*   **Prerequisites:** To run this script, you will need the `pygame` library installed (`pip install pygame`).
+
 ---
 
 ### Part 2: Coupled Spring-Mass System
